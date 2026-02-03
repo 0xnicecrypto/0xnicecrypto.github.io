@@ -1,0 +1,81 @@
+baseURL = 'https://yourusername.github.io'
+languageCode = 'zh-CN'
+title = '我的个人网站'
+theme = 'PaperMod'
+
+[params]
+  author = '你的名字'
+  description = '欢迎来到我的个人网站'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  [params.profileMode]
+    enabled = true
+    title = '你好，我是你的名字'
+    subtitle = '欢迎来到我的个人网站'
+    imageUrl = 'https://avatars.githubusercontent.com/u/yourusername'
+    imageWidth = 120
+    imageHeight = 120
+    imageTitle = '头像'
+
+  [[params.profileMode.buttons]]
+    name = '博客'
+    url = 'posts'
+
+  [[params.profileMode.buttons]]
+    name = '关于我'
+    url = 'about'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/yourusername'
+
+  [[params.socialIcons]]
+    name = 'twitter'
+    url = 'https://twitter.com/yourusername'
+
+  [[params.socialIcons]]
+    name = 'email'
+    url = 'mailto:your.email@example.com'
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = '首页'
+    url = '/'
+    weight = 10
+
+  [[menu.main]]
+    identifier = 'posts'
+    name = '博客'
+    url = '/posts/'
+    weight = 20
+
+  [[menu.main]]
+    identifier = 'about'
+    name = '关于'
+    url = '/about/'
+    weight = 30
+
+  [[menu.main]]
+    identifier = 'tags'
+    name = '标签'
+    url = '/tags/'
+    weight = 40
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
