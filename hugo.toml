@@ -1,6 +1,6 @@
 baseURL = 'https://yourusername.github.io'
-languageCode = 'zh-CN'
-title = '我的个人网站'
+defaultContentLanguage = 'zh'
+defaultContentLanguageInSubdir = false
 theme = 'PaperMod'
 
 [params]
@@ -22,6 +22,8 @@ theme = 'PaperMod'
   hideSummary = false
   showtoc = false
   tocopen = false
+  # 显示语言切换器
+  displayFullLangName = true
 
   [params.profileMode]
     enabled = true
@@ -52,30 +54,89 @@ theme = 'PaperMod'
     name = 'email'
     url = 'mailto:your.email@example.com'
 
-[menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = '首页'
-    url = '/'
-    weight = 10
+# 多语言配置
+[languages]
+  [languages.zh]
+    languageName = '中文'
+    languageCode = 'zh-CN'
+    weight = 1
+    title = '我的个人网站'
+    
+    [languages.zh.params]
+      description = '欢迎来到我的个人网站'
+      profileModeTitle = '你好，我是你的名字'
+      profileModeSubtitle = '欢迎来到我的个人网站'
+    
+    [[languages.zh.menu.main]]
+      identifier = 'home'
+      name = '首页'
+      url = '/'
+      weight = 10
 
-  [[menu.main]]
-    identifier = 'posts'
-    name = '博客'
-    url = '/posts/'
-    weight = 20
+    [[languages.zh.menu.main]]
+      identifier = 'posts'
+      name = '博客'
+      url = '/posts/'
+      weight = 20
 
-  [[menu.main]]
-    identifier = 'about'
-    name = '关于'
-    url = '/about/'
-    weight = 30
+    [[languages.zh.menu.main]]
+      identifier = 'about'
+      name = '关于'
+      url = '/about/'
+      weight = 30
 
-  [[menu.main]]
-    identifier = 'tags'
-    name = '标签'
-    url = '/tags/'
-    weight = 40
+    [[languages.zh.menu.main]]
+      identifier = 'tags'
+      name = '标签'
+      url = '/tags/'
+      weight = 40
+
+    [[languages.zh.menu.main]]
+      identifier = 'search'
+      name = '搜索'
+      url = '/search/'
+      weight = 50
+
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en-US'
+    weight = 2
+    title = 'My Personal Website'
+    
+    [languages.en.params]
+      description = 'Welcome to my personal website'
+      profileModeTitle = 'Hi, I am Your Name'
+      profileModeSubtitle = 'Welcome to my personal website'
+    
+    [[languages.en.menu.main]]
+      identifier = 'home'
+      name = 'Home'
+      url = '/'
+      weight = 10
+
+    [[languages.en.menu.main]]
+      identifier = 'posts'
+      name = 'Blog'
+      url = '/posts/'
+      weight = 20
+
+    [[languages.en.menu.main]]
+      identifier = 'about'
+      name = 'About'
+      url = '/about/'
+      weight = 30
+
+    [[languages.en.menu.main]]
+      identifier = 'tags'
+      name = 'Tags'
+      url = '/tags/'
+      weight = 40
+
+    [[languages.en.menu.main]]
+      identifier = 'search'
+      name = 'Search'
+      url = '/search/'
+      weight = 50
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
