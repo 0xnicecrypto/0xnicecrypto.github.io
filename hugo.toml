@@ -1,5 +1,5 @@
 baseURL = 'https://yourusername.github.io'
-defaultContentLanguage = 'zh'
+defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = false
 theme = 'PaperMod'
 
@@ -56,9 +56,9 @@ theme = 'PaperMod'
 
 # 多语言配置
 [languages]
-  [languages.zh]
-    languageName = '中文'
-    languageCode = 'zh-CN'
+  [languages.en]
+    languageName = 'English'
+    languageCode = 'en-US'
     weight = 1
     title = '我的个人网站'
     
@@ -97,9 +97,9 @@ theme = 'PaperMod'
       url = '/search/'
       weight = 50
 
-  [languages.en]
-    languageName = 'English'
-    languageCode = 'en-US'
+  [languages.zh]
+    languageName = '中文'
+    languageCode = 'zh-CN'
     weight = 2
     title = 'My Personal Website'
     
