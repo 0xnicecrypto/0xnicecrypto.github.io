@@ -4,8 +4,8 @@ defaultContentLanguageInSubdir = false
 theme = 'PaperMod'
 
 [params]
-  author = '你的名字'
-  description = '欢迎来到我的个人网站'
+  author = 'Your Name'
+  description = 'Welcome to my personal website'
   defaultTheme = 'auto'
   ShowReadingTime = true
   ShowShareButtons = true
@@ -22,24 +22,23 @@ theme = 'PaperMod'
   hideSummary = false
   showtoc = false
   tocopen = false
-  # 显示语言切换器
   displayFullLangName = true
 
   [params.profileMode]
     enabled = true
-    title = '你好，我是你的名字'
-    subtitle = '欢迎来到我的个人网站'
+    title = 'Hi, I am Your Name'
+    subtitle = 'Welcome to my personal website'
     imageUrl = 'https://avatars.githubusercontent.com/u/yourusername'
     imageWidth = 120
     imageHeight = 120
-    imageTitle = '头像'
+    imageTitle = 'Profile Picture'
 
   [[params.profileMode.buttons]]
-    name = '博客'
+    name = 'Blog'
     url = 'posts'
 
   [[params.profileMode.buttons]]
-    name = '关于我'
+    name = 'About Me'
     url = 'about'
 
   [[params.socialIcons]]
@@ -60,47 +59,6 @@ theme = 'PaperMod'
     languageName = 'English'
     languageCode = 'en-US'
     weight = 1
-    title = '我的个人网站'
-    
-    [languages.zh.params]
-      description = '欢迎来到我的个人网站'
-      profileModeTitle = '你好，我是你的名字'
-      profileModeSubtitle = '欢迎来到我的个人网站'
-    
-    [[languages.zh.menu.main]]
-      identifier = 'home'
-      name = '首页'
-      url = '/'
-      weight = 10
-
-    [[languages.zh.menu.main]]
-      identifier = 'posts'
-      name = '博客'
-      url = '/posts/'
-      weight = 20
-
-    [[languages.zh.menu.main]]
-      identifier = 'about'
-      name = '关于'
-      url = '/about/'
-      weight = 30
-
-    [[languages.zh.menu.main]]
-      identifier = 'tags'
-      name = '标签'
-      url = '/tags/'
-      weight = 40
-
-    [[languages.zh.menu.main]]
-      identifier = 'search'
-      name = '搜索'
-      url = '/search/'
-      weight = 50
-
-  [languages.zh]
-    languageName = '中文'
-    languageCode = 'zh-CN'
-    weight = 2
     title = 'My Personal Website'
     
     [languages.en.params]
@@ -135,6 +93,47 @@ theme = 'PaperMod'
     [[languages.en.menu.main]]
       identifier = 'search'
       name = 'Search'
+      url = '/search/'
+      weight = 50
+
+  [languages.zh]
+    languageName = '中文'
+    languageCode = 'zh-CN'
+    weight = 2
+    title = '我的个人网站'
+    
+    [languages.zh.params]
+      description = '欢迎来到我的个人网站'
+      profileModeTitle = '你好，我是你的名字'
+      profileModeSubtitle = '欢迎来到我的个人网站'
+    
+    [[languages.zh.menu.main]]
+      identifier = 'home'
+      name = '首页'
+      url = '/'
+      weight = 10
+
+    [[languages.zh.menu.main]]
+      identifier = 'posts'
+      name = '博客'
+      url = '/posts/'
+      weight = 20
+
+    [[languages.zh.menu.main]]
+      identifier = 'about'
+      name = '关于'
+      url = '/about/'
+      weight = 30
+
+    [[languages.zh.menu.main]]
+      identifier = 'tags'
+      name = '标签'
+      url = '/tags/'
+      weight = 40
+
+    [[languages.zh.menu.main]]
+      identifier = 'search'
+      name = '搜索'
       url = '/search/'
       weight = 50
 
