@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const currentLocale = Astro.currentLocale || 'en';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter(post => !post.data.draft && post.data.locale === currentLocale)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// Translations
+const t = {
+  en: {
+    title: "My Personal Website",
+    greeting: "Hello there!",
+    intro: "Welcome to my personal website! I'm a developer passionate about technology and creation.",
+    builtWith: "This site is built with",
+    using: "using the",
+  },
+  zh: {
+    title: "我的个人网站",
+    greeting: "你好！",
+    intro: "欢迎来到我的个人网站！我是一名热爱技术和创作的开发者。",
+    builtWith: "本站使用",
+    using: "构建，主题采用",
+  }
+};
+
+const content = t[currentLocale as keyof typeof t];
+---
+
+<BaseLayout title={content.title}>
+  <div class="index-content framed">
+    <h1 id="hello-there">{content.greeting}</h1>
+    <p>{content.intro}</p>
+    <p>
+      {content.builtWith} <a href="https://astro.build/">Astro</a> {content.using}
+      <a href="https://github.com/dennisklappe/astro-theme-terminal">Terminal theme</a>.
+    </p>
+  </div>
+  
+  <div class="posts">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</BaseLayout>

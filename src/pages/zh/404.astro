@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const currentLocale = Astro.currentLocale || 'zh';
+
+const t = {
+  zh: {
+    title: "404 - 页面未找到",
+    heading: "404 - 页面未找到",
+    message: "抱歉，您访问的页面不存在。",
+    goHome: "返回首页"
+  }
+};
+
+const content = t.zh;
+---
+
+<BaseLayout title={content.title}>
+  <div class="page">
+    <h1>{content.heading}</h1>
+    <p>{content.message}</p>
+    <p>
+      <a href="/zh/" class="button">{content.goHome}</a>
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .page {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  h1 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 30px;
+  }
+</style>
