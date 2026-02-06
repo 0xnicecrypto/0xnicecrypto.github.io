@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 export interface Props {
   title: string;
@@ -18,12 +19,14 @@ const nav = {
     about: 'About',
     posts: 'Posts',
     tags: 'Tags',
+    privacy: 'Privacy',
   },
   zh: {
     home: '首页',
     about: '关于',
     posts: '文章',
     tags: '标签',
+    privacy: '隐私政策',
   }
 };
 
@@ -56,6 +59,9 @@ const n = nav[currentLocale as keyof typeof nav];
     
     <link rel="sitemap" href={`${base}sitemap-index.xml`} />
     <link rel="alternate" type="application/rss+xml" title="RSS" href={`${base}rss.xml`} />
+    
+    <!-- Google Analytics -->
+    <GoogleAnalytics measurementId="G-G84DSRF4DF" />
   </head>
   <body>
     <div class="container center">
@@ -80,6 +86,7 @@ const n = nav[currentLocale as keyof typeof nav];
                 <li><a href={`${base}about/`}>{n.about}</a></li>
                 <li><a href={`${base}posts/`}>{n.posts}</a></li>
                 <li><a href={`${base}tags/`}>{n.tags}</a></li>
+                <li><a href={`${base}privacy/`}>{n.privacy}</a></li>
               </ul>
             </li>
           </ul>
@@ -90,6 +97,7 @@ const n = nav[currentLocale as keyof typeof nav];
             <li><a href={`${base}about/`}>{n.about}</a></li>
             <li><a href={`${base}posts/`}>{n.posts}</a></li>
             <li><a href={`${base}tags/`}>{n.tags}</a></li>
+            <li><a href={`${base}privacy/`}>{n.privacy}</a></li>
           </ul>
         </nav>
       </header>
@@ -102,9 +110,9 @@ const n = nav[currentLocale as keyof typeof nav];
         <div class="footer__inner">
           <div class="copyright">
             {currentLocale === 'zh' ? (
-              <span>© 2026 bubbleBoy :: 使用 <a href="https://astro.build">Astro</a> 构建</span>
+              <span>© 2026 bubbleBoy :: 使用 <a href="https://astro.build">Astro</a> 构建 :: <a href={`${base}privacy/`}>隐私政策</a></span>
             ) : (
-              <span>© 2026 bubbleBoy :: Built with <a href="https://astro.build">Astro</a></span>
+              <span>© 2026 bubbleBoy :: Built with <a href="https://astro.build">Astro</a> :: <a href={`${base}privacy/`}>Privacy Policy</a></span>
             )}
           </div>
         </div>
