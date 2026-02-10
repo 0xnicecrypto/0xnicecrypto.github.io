@@ -38,8 +38,10 @@ const n = nav[currentLocale as keyof typeof nav];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-    <link rel="alternate icon" type="image/x-icon" href={`${base}favicon.ico`} />
+    <link rel="icon" type="image/x-icon" href={`${base}favicon.ico`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${base}favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16x16.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${base}apple-touch-icon.png`} />
     <meta name="generator" content={Astro.generator} />
     
     <title>{title}</title>
@@ -70,7 +72,7 @@ const n = nav[currentLocale as keyof typeof nav];
           <div class="header__logo">
             <a href={base}>
               <div class="logo">
-                ~/blog
+                Popping Bubbles in the Ice
               </div>
             </a>
           </div>
@@ -110,9 +112,15 @@ const n = nav[currentLocale as keyof typeof nav];
         <div class="footer__inner">
           <div class="copyright">
             {currentLocale === 'zh' ? (
-              <span>© 2026 bubbleBoy :: 使用 <a href="https://astro.build">Astro</a> 构建 :: <a href={`${base}privacy/`}>隐私政策</a></span>
+              <>
+                <span>© 2026 bubbleBoy :: 使用 <a href="https://astro.build">Astro</a> 构建</span>
+                <span class="footer-privacy"><a href={`${base}privacy/`}>隐私政策</a></span>
+              </>
             ) : (
-              <span>© 2026 bubbleBoy :: Built with <a href="https://astro.build">Astro</a> :: <a href={`${base}privacy/`}>Privacy Policy</a></span>
+              <>
+                <span>© 2026 bubbleBoy :: Built with <a href="https://astro.build">Astro</a></span>
+                <span class="footer-privacy"><a href={`${base}privacy/`}>Privacy Policy</a></span>
+              </>
             )}
           </div>
         </div>
@@ -201,5 +209,16 @@ const n = nav[currentLocale as keyof typeof nav];
     .header__lang-switcher {
       padding-right: 10px;
     }
+  }
+  
+  /* Footer styling for mobile */
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .footer-privacy {
+    font-size: 0.9rem;
   }
 </style>
