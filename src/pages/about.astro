@@ -1,112 +1,33 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import PageLayout from "@/layouts/Base.astro";
 
-const currentLocale = Astro.currentLocale || 'en';
-
-const t = {
-  en: {
-    title: "About Me",
-    greeting: "Hello!",
-    welcome: "Welcome to my personal website. I'm a developer passionate about technology and creation.",
-    skills: "My Skills",
-    frontend: "Frontend",
-    backend: "Backend",
-    others: "Others",
-    interests: "Interests",
-    interestList: [
-      "Programming and tech exploration",
-      "Reading and learning new things",
-      "Open source contributions"
-    ],
-    contact: "Contact",
-    github: "GitHub",
-    email: "Email",
-    themeCredit: "This site uses the",
-    theme: "Astro Terminal theme",
-    portOf: "a port of the",
-    by: "by",
-  },
-  zh: {
-    title: "关于我",
-    greeting: "你好！",
-    welcome: "欢迎来到我的个人网站。我是一名热爱技术和创作的开发者。",
-    skills: "我的技能",
-    frontend: "前端开发",
-    backend: "后端开发",
-    others: "其他",
-    interests: "兴趣爱好",
-    interestList: [
-      "编程和技术探索",
-      "阅读和学习新知识",
-      "开源项目贡献"
-    ],
-    contact: "联系方式",
-    github: "GitHub",
-    email: "邮箱",
-    themeCredit: "本站使用",
-    theme: "Astro Terminal 主题",
-    portOf: "移植自",
-    by: "作者",
-  }
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
 };
-
-const content = t[currentLocale as keyof typeof t];
 ---
 
-<BaseLayout title={content.title}>
-  <div class="page">
-    <h1>{content.title}</h1>
-    
-    <p>{content.welcome}</p>
-    
-    <h3>{content.skills}</h3>
-    <ul>
-      <li><strong>{content.frontend}</strong>: HTML, CSS, JavaScript, React, Vue</li>
-      <li><strong>{content.backend}</strong>: Python, Node.js, Go</li>
-      <li><strong>{content.others}</strong>: Git, Docker, Linux</li>
-    </ul>
-    
-    <h3>{content.interests}</h3>
-    <ul>
-      {content.interestList.map(item => <li>{item}</li>)}
-    </ul>
-    
-    <h3>{content.contact}</h3>
-    <ul>
-      <li>{content.github}: <a href="https://github.com/yourusername" target="_blank" rel="noopener">yourusername</a></li>
-      <li>{content.email}: your.email@example.com</li>
-    </ul>
-    
-    <hr class="divider" />
-    
-    <div class="theme-credit">
-      <p>
-        {content.themeCredit} <a href="https://github.com/dennisklappe/astro-theme-terminal" target="_blank" rel="noopener">{content.theme}</a>, 
-        {content.portOf} <a href="https://github.com/panr/hugo-theme-terminal" target="_blank" rel="noopener">Hugo Terminal theme</a> {content.by} <a href="https://github.com/panr" target="_blank" rel="noopener">panr</a>.
-      </p>
-    </div>
-  </div>
-</BaseLayout>
-
-<style>
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-  
-  .divider {
-    border: none;
-    border-top: 1px solid var(--code-border);
-    margin: 2rem 0;
-  }
-  
-  .theme-credit {
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: var(--comment);
-  }
-  
-  .theme-credit a {
-    color: var(--secondary);
-  }
-</style>
+<PageLayout meta={meta}>
+	<h1 class="title mb-12">About</h1>
+	<div class="prose prose-sm prose-cactus max-w-none">
+		<p>
+			Hey, I was an iOS Dev, 
+			PM@Crypto.com, 
+			cr8ted CronosID, 
+			and now vibe coding 
+			and write some stuff here.
+		</p>
+		<p>Here are my some of my vibe coded projects:</p>
+		<ul class="list-inside list-disc" role="list">
+			<li>Timer kits - coming soon</li>
+		</ul>
+		<p>
+			Clone or fork my <a
+				class="cactus-link inline-block"
+				href="https://github.com/0xnicecrypto"
+				rel="noreferrer"
+				target="_blank">repo</a
+			> if you like!
+		</p>
+	</div>
+</PageLayout>
