@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import ThemeProvider from "@/components/ThemeProvider.astro";
-import { siteConfig } from "@/site.config";
+import { createI18n } from "@/i18n";
 import type { SiteMeta } from "@/types";
 
 interface Props {
@@ -12,11 +12,13 @@ interface Props {
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title },
+	meta: { articleDate, description, ogImage, title },
 } = Astro.props;
+
+const { locale, t } = createI18n(Astro);
 ---
 
-<html class="scroll-smooth" lang={siteConfig.lang}>
+<html class="scroll-smooth" lang={locale === "zh" ? "zh-CN" : "en-US"}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 	</head>

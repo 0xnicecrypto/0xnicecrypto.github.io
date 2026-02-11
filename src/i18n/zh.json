@@ -1,0 +1,64 @@
+{
+  "site": {
+    "title": "Your Site Title",
+    "description": "bubbleBoy 的个人博客 - 关于技术、代码和生活的思考"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "posts": "文章",
+    "tags": "标签",
+    "notes": "笔记"
+  },
+  "common": {
+    "openMenu": "打开主菜单",
+    "closeMenu": "关闭菜单",
+    "search": "搜索",
+    "theme": {
+      "light": "浅色",
+      "dark": "深色",
+      "auto": "自动",
+      "toggle": "切换主题"
+    },
+    "language": "语言",
+    "readMore": "阅读更多",
+    "publishedOn": "发布于",
+    "updatedOn": "更新于",
+    "minRead": "分钟阅读",
+    "relatedPosts": "相关文章",
+    "backToTop": "返回顶部",
+    "skipToContent": "跳转到内容",
+    "allPosts": "所有文章",
+    "allTags": "所有标签",
+    "latestPosts": "最新文章",
+    "viewAll": "查看全部"
+  },
+  "home": {
+    "title": "首页",
+    "greeting": "嘿!",
+    "description": "前iOS开发者，曾任职于Crypto.com，创建了CronosID，现在在vibe coding，并在这里写一些东西。"
+  },
+  "about": {
+    "title": "关于"
+  },
+  "posts": {
+    "title": "文章",
+    "description": "所有博客文章"
+  },
+  "tags": {
+    "title": "标签",
+    "description": "所有话题"
+  },
+  "notes": {
+    "title": "笔记",
+    "description": "随想和灵感"
+  },
+  "404": {
+    "title": "页面未找到",
+    "description": "抱歉，您访问的页面不存在。",
+    "backHome": "返回首页"
+  },
+  "footer": {
+    "copyright": "保留所有权利。"
+  }
+}

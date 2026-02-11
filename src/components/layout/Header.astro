@@ -1,8 +1,19 @@
 ---
+import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
 import Search from "@/components/Search.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
+import { createI18n, getLocalizedPath } from "@/i18n";
 import { menuLinks } from "@/site.config";
 import { siteConfig } from "../../site.config";
+
+const { locale, t } = createI18n(Astro);
+
+// Localized menu links
+const localizedMenuLinks = menuLinks.map((link) => ({
+	...link,
+	path: getLocalizedPath(link.path, locale),
+	title: t(`nav.${link.title.toLowerCase()}` as const),
+}));
 ---
 
 <header class="group relative mb-28 flex items-center sm:ps-18" id="main-header">
@@ -40,7 +51,7 @@ import { siteConfig } from "../../site.config";
 			id="navigation-menu"
 		>
 			{
-				menuLinks.map((link) => (
+				localizedMenuLinks.map((link) => (
 					<a
 						aria-current={Astro.url.pathname === link.path ? "page" : false}
 						class="text-accent px-2 py-4 font-semibold sm:px-4 sm:py-0 sm:underline-offset-2 sm:hover:underline"
@@ -53,6 +64,7 @@ import { siteConfig } from "../../site.config";
 		</nav>
 	</div>
 	<Search />
+	<LanguageSwitcher />
 	<ThemeToggle />
 	<mobile-button>
 		<button

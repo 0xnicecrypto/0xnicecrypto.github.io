@@ -1,0 +1,64 @@
+{
+  "site": {
+    "title": "Popping bubble in the ice",
+    "description": ""
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "posts": "Posts",
+    "tags": "Tags",
+    "notes": "Notes"
+  },
+  "common": {
+    "openMenu": "Open main menu",
+    "closeMenu": "Close menu",
+    "search": "Search",
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Auto",
+      "toggle": "Toggle theme"
+    },
+    "language": "Language",
+    "readMore": "Read more",
+    "publishedOn": "Published on",
+    "updatedOn": "Updated on",
+    "minRead": "min read",
+    "relatedPosts": "Related Posts",
+    "backToTop": "Back to top",
+    "skipToContent": "Skip to content",
+    "allPosts": "All Posts",
+    "allTags": "All Tags",
+    "latestPosts": "Latest Posts",
+    "viewAll": "View all"
+  },
+  "home": {
+    "title": "Home",
+    "greeting": "Yo!",
+    "description": "Hey, I was an iOS Dev, PM@Crypto.com, cr8ted CronosID, and now vibe coding and write some stuff here."
+  },
+  "about": {
+    "title": "About"
+  },
+  "posts": {
+    "title": "Posts",
+    "description": "All my blog posts"
+  },
+  "tags": {
+    "title": "Tags",
+    "description": "All topics"
+  },
+  "notes": {
+    "title": "Notes",
+    "description": "Quick thoughts and ideas"
+  },
+  "404": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist.",
+    "backHome": "Back to home"
+  },
+  "footer": {
+    "copyright": "All rights reserved."
+  }
+}

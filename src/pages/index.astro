@@ -5,8 +5,11 @@ import PostPreview from "@/components/blog/PostPreview.astro";
 import Note from "@/components/note/Note.astro";
 import SocialList from "@/components/SocialList.astro";
 import { getAllPosts } from "@/data/post";
+import { createI18n, getLocalizedPath } from "@/i18n";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
+
+const { locale, t } = createI18n(Astro);
 
 // Posts
 const MAX_POSTS = 10;
@@ -24,17 +27,16 @@ const allNotes = await getCollection("note");
 const latestNotes = allNotes
 	.sort(collectionDateSort)
 	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+
+const postsPath = getLocalizedPath("/posts/", locale);
+const notesPath = getLocalizedPath("/notes/", locale);
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: t("home.title") }}>
 	<section>
-		<h1 class="title mb-12">Yo!</h1>
+		<h1 class="title mb-12">{t("home.greeting")}</h1>
 		<p class="mb-4">
-			I was an iOS Dev, 
-			PM@Crypto.com, 
-			cr8ted CronosID, 
-			and now vibe coding 
-			and write stuff here.
+			{t("home.description")}
 		</p>
 		<SocialList />
 	</section>
@@ -53,7 +55,7 @@ const latestNotes = allNotes
 		)
 	}
 	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
+		<h2 class="title text-accent mb-6 text-xl"><a href={postsPath}>{t("nav.posts")}</a></h2>
 		<ul class="space-y-4" role="list">
 			{
 				latestPosts.map((p) => (
@@ -68,7 +70,7 @@ const latestNotes = allNotes
 		latestNotes.length > 0 && (
 			<section class="mt-16">
 				<h2 class="title text-accent mb-6 text-xl">
-					<a href="/notes/">Notes</a>
+					<a href={notesPath}>{t("nav.notes")}</a>
 				</h2>
 				<ul class="space-y-6" role="list">
 					{latestNotes.map((note) => (

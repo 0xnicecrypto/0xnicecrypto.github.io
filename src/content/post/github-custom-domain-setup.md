@@ -4,7 +4,7 @@ description: "What after you purchased your domain? A step-by-step guide to sett
 publishDate: "2026-02-11"
 author: "bubbleBoy"
 tags: ["tutorial", "github", "domain"]
-draft: false
+draft: true
 ---
 
 ## What after you purchased your domain?
