@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Your Site Title",
+    "title": "bubbleBoy",
     "description": "bubbleBoy 的个人博客 - 关于技术、代码和生活的思考"
   },
   "nav": {
@@ -35,8 +35,8 @@
   },
   "home": {
     "title": "首页",
-    "greeting": "嘿!",
-    "description": "前iOS开发者，曾任职于Crypto.com，创建了CronosID，现在在vibe coding，并在这里写一些东西。"
+    "greeting": "你好，我是 bubbleBoy！",
+    "description": "欢迎来到我的个人博客，这里分享关于技术、编程和生活的思考。"
   },
   "about": {
     "title": "关于"
